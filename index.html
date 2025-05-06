@@ -8,9 +8,56 @@
 <body>
     <!-- 文字で「電卓アプリ」と表示 -->
     <p>電卓アプリ</p>
-    <!-- 「123」というボタンを押したらformに入力されるようにしたい -->
-     <input type="text" name="content" value=" ">
-     <button type="button" onclick="document.querySelector( 'input' ).value = '123' ">123</button>
-     <script src="main.js"></script>
+    <input type="text" />
+    <!-- ボタンを0~9まで増やす -->
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+
+     <!-- 四則演算、小数点演算、二乗、平方根（ルート）の計算をできるようにする -->
+    <button onclick="add('+')">+</button>
+    <button onclick="add('-')">-</button>
+    <button onclick="add('*')">*</button>
+    <button onclick="add('/')">-</button>
+    <button onclick="add('**')">^</button>
+    <button onclick="add('**0.5')">√</button>
+    <button onclick="cal('=')">=</button>
+    <button onclick="clearInput('')">CLR</button>
+    <script>
+      // inputタグを更新する関数を作る
+      function clearInput(v) {
+        document.querySelector("input").value = v;
+      }
+
+      //数字を後ろに追加する関数
+      function add(v) {
+            t = document.querySelector("input").value;
+            if(t=='Error'){
+                clearInput('');
+            }
+            document.querySelector("input").value += v;
+        }
+
+      //「＋」「ー」ボタンを追加して、「＝」ボタンが押されたら計算されるようにする
+      function cal(){
+        try{
+            ans = document.querySelector("input");
+            ans.value = eval(ans.value);
+        }catch(_error){
+            clearInput('Error');
+        }
+      }
+
+    </script>
+
+
+
+
 </body>
 </html>
