@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    max-width: 180px;
+    margin: 10px auto;
+    padding: 50px;
+}
+
+button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 18px;
+    
+}
+.inputbox {
+    display: block;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+input[type="text"] {
+    
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
